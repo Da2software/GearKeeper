@@ -45,7 +45,7 @@ object OdometerReminderNotification {
             pendingVehicleCount,
         )
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setSmallIcon(R.drawable.ic_notification_logo)
             .setContentTitle(context.getString(R.string.odometer_reminder_notification_title))
             .setContentText(contentText)
             .setStyle(NotificationCompat.BigTextStyle().bigText(contentText))
