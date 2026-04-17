@@ -1,0 +1,44 @@
+---
+alwaysApply: true
+---
+
+---
+description: Android Compose architecture and structure guardrails
+alwaysApply: true
+---
+
+# Android Compose Project Standards
+
+Before implementing any substantial change, follow these checks and constraints:
+
+- Validate current project structure first (features, ui, domain, data) and align changes to Android Compose patterns.
+- Reject changes that mix unrelated concerns or break existing architectural boundaries.
+
+## File Placement Rules
+
+- Verify whether a requirement should be implemented in an existing file or a new file before editing.
+- Prefer creating new focused files/components when responsibility differs (example: in React areas, create a new `*.tsx` component instead of overloading another file).
+- Group components by functionality/domain, not by technical type alone.
+
+## UI vs Logic Separation
+
+- Keep UI composables focused on rendering and UI state handling.
+- Move business logic, transformations, and side effects to separate logic layers/files (ViewModel/use-case/repository as appropriate).
+- Do not place domain or data logic directly inside Compose UI files.
+
+## Kotlin and Android Best Practices
+
+- Apply current Kotlin + Android best practices before coding:
+  - explicit function/method return types
+  - clear state modeling and unidirectional data flow
+  - avoid unused imports, variables, and dead code
+  - small, testable units with single responsibility
+- If a request conflicts with maintainability or SOLID principles, propose a better alternative first.
+
+## Pre-change Checklist (Required)
+
+1. Confirm structure alignment with Compose architecture.
+2. Confirm correct file placement (existing vs new file).
+3. Confirm functionality-based grouping.
+4. Confirm UI/logic separation.
+5. Confirm Kotlin/Android best-practice compliance.
